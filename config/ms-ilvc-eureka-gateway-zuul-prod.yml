@@ -1,0 +1,23 @@
+server:
+  port: 8866
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: ms-ilvc-eureka-gateway-zuul
+zuul:
+  routes:
+    order-serviceId:
+      path: /order/**
+      service-id: ms-ilvc-eureka-order
+    user-serviceId:
+      paht: /user/**
+      service-id: ms-ilvc-eureka-user-hystrix
+  # ignored-services: # 该配置下的服务将会被忽略，不会被路由
+
+
+

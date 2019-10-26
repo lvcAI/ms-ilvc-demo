@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ms-ilvc-config-client
+  cloud:
+    config:
+      profile: prod
+      uri: http://localhost:8889/
+server:
+  port: 8890
