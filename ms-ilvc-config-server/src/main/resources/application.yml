@@ -13,10 +13,13 @@ spring:
   application:
     name: ms-ilvc-config-server # 指定应用名称
   profiles:
-    active: native # 使用本地文件系统的存储方式来保存配置信息
+#    active: native # 使用本地文件系统的存储方式来保存配置信息
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
+        git:
+#        native: 本地存储
+#          search-locations: classpath:/config
+          uri:  https://github.com/lvcAI/ms-ilvc-demo
+          search-paths: config/
 
